@@ -3,15 +3,15 @@ const router = express.Router();
 const User = require('../models/user.js');
 
 //GET  /community
-router.get('/', async (req, res) => {
+router.get('/', async (req,res) => {
   try {
-      const allUsers = await User.find({}, 'username')
-      res.render('users/index.ejs', {
-        users: allUsers
-      })
+  const allUsers = await User.find({}, 'username')
+  res.render('users/index.ejs', {
+    users : allUsers
+  })
   } catch (error) {
-      console.error('Error users:', error)
-      res.redirect('/')
+    console.error('Error community index page', error)
+    res.redirect('/')
   }
 })
 

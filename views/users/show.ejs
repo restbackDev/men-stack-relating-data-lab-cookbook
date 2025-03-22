@@ -11,10 +11,16 @@
     <h1>community/index.ejs</h1>
     <h1>Explore Our Community</h1>
 
-    <% if (users && users.length> 0) { %> <% users.forEach(user=> { %>
-    <p><a href="/community/<%= user._id %>"> <%= user.username %> </a></p>
-    <% }) %> <% } else { %>
-    <p>No users found in the community</p>
+    <h1><%= selectedUser.username %>'s Pantry</h1>
+
+    <% if (selectedUser.pantry.length > 0) { %>
+        <ul>
+            <% selectedUser.pantry.forEach(item => { %>
+                <li><%= item.name %> - Quantity: <%= item.quantity %></li>
+            <% }) %>
+        </ul>
+        <% } else { %>
+         <p>This Pantry is Empty!</p>
     <% } %>
   </body>
 </html>
