@@ -12,9 +12,9 @@
     <h1>Explore Our Community</h1>
 
     <% if (users && users.length> 0) { %> <% users.forEach(user=> { %>
-    <p><a href="/community/<%= user._id %>"> <%= user.username %> </a></p>
+      <p><a href="/community/<%= user._id %>"> <%= user.username %> </a></p>
     <% }) %> <% } else { %>
-    <p>No users found in the community</p>
+      <p>No users found in the community</p>
     <% } %>
   </body>
 </html>
